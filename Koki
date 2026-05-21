@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EGI.LEARN - By Muhammad Egi Sujana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #f3f4f6; /* Soft Gray */
+            --primary: #a1b5d8; /* Soft Denim Blue */
+            --secondary: #e4f1ee; /* Soft Mint */
+            --accent: #ffd6ba; /* Soft Peach */
+            --text-main: #374151;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --radius: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: var(--white);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .profile-btn {
+            background-color: var(--accent);
+            color: var(--text-main);
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e4f1ee 100%);
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .search-bar {
+            display: flex;
+            background: var(--white);
+            border-radius: 30px;
+            padding: 5px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .search-bar input {
+            border: none;
+            padding: 15px 25px;
+            border-radius: 30px;
+            width: 100%;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .search-bar button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .search-bar button:hover {
+            background-color: #8fa5c9;
+        }
+
+        /* Gen Z Features */
+        .features {
+            padding: 60px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: -40px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Courses Section */
+        .courses {
+            padding: 50px 5%;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            position: relative;
+        }
+
+        .tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .course-card h3 {
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .course-card p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .progress {
+            height: 100%;
+            background: var(--primary);
+            width: 65%; /* Example progress */
+        }
+
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 5%;
+            }
+            .nav-links {
+                display: none; /* In a real app, make a hamburger menu */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo"><i class="fa-solid fa-layer-group"></i> EGI.LEARN</a>
+        <div class="nav-links">
+            <a href="#">Explore</a>
+            <a href="#">My Paths</a>
+            <a href="#">Community Hub</a>
+            <a href="#">AI Buddy</a>
+        </div>
+        <a href="#" class="profile-btn">Hey, Egi!</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 id="greeting">Upskill Your Future, <span>Your Way.</span></h1>
+            <p>Platform belajar dewasa modern yang diciptakan oleh Muhammad Egi Sujana. Belajar kapan saja, di mana saja, dengan gaya yang pas buat kamu.</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Mau belajar apa hari ini? (ex: Python, Finance, Design)">
+                <button onclick="searchCourse()">Cari</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="feature-card">
+            <i class="fa-solid fa-bolt feature-icon" style="color: #ffd6ba;"></i>
+            <h3>Bite-Sized Learning</h3>
+            <p>Materi padat dan singkat. Belajar skill baru cuma dalam 10-15 menit per sesi. Anti bosan.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-robot feature-icon" style="color: #a1b5d8;"></i>
+            <h3>AI Tutor Mentor</h3>
+            <p>Buntu saat belajar? AI asisten kami siap membantu menjawab pertanyaanmu 24/7.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-gamepad feature-icon" style="color: #b5e8d5;"></i>
+            <h3>Gamified Streaks</h3>
+            <p>Kumpulkan badge, pertahankan streak belajar, dan tukarkan poin dengan rewards menarik.</p>
+        </div>
+    </section>
+
+    <section class="courses">
+        <h2 class="section-title">Lanjutkan Belajarmu 🔥</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <span class="tag">Bite-sized</span>
+                <h3>Financial Literacy 101</h3>
+                <p>Belajar investasi saham dan kripto untuk pemula dengan bahasa yang santai.</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+                <div class="course-footer">
+                    <span><i class="fa-solid fa-clock"></i> 2 modules left</span>
+                    <strong style="color: var(--primary); cursor: pointer;">Lanjut ></strong>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <span class="tag" style="background: #e4f1ee;">Trending</span>
+                <h3>UI/UX Design Masterclass</h3>
+                <p>Pahami psikologi warna dan pembuatan wireframe tingkat lanjut untuk aplikasi.</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 35%;"></div>
+                </div>
+                <div class="course-footer">
+                    <span><i class="fa-solid fa-clock"></i> 12 modules left</span>
+                    <strong style="color: var(--primary); cursor: pointer;">Lanjut ></strong>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <span class="tag" style="background: #e4f1ee;">New</span>
+                <h3>Prompt Engineering AI</h3>
+                <p>Cara menggunakan AI secara efektif untuk mempercepat pekerjaan harianmu.</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 0%;"></div>
+                </div>
+                <div class="course-footer">
+                    <span><i class="fa-solid fa-clock"></i> Belum dimulai</span>
+                    <strong style="color: var(--primary); cursor: pointer;">Mulai ></strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple interactive script
+        function searchCourse() {
+            alert("Sistem AI Egi.Learn sedang mencari kurikulum terbaik untukmu... 🚀");
+        }
+
+        // Dynamic greeting based on time
+        const hour = new Date().getHours();
+        let greetingText = "Upskill Your Future";
+        if (hour < 12) greetingText = "Good Morning, Let's Upskill";
+        else if (hour < 18) greetingText = "Good Afternoon, Let's Upskill";
+        else greetingText = "Good Evening, Let's Upskill";
+        
+        document.getElementById('greeting').innerHTML = greetingText + ", <span>Your Way.</span>";
+    </script>
+</body>
+</html>
